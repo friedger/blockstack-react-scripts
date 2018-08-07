@@ -142,6 +142,9 @@ module.exports = {
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
                 extends: [require.resolve('eslint-config-react-app')],
+                rules: {
+                  "react/react-in-jsx-scope": 0,
+                },
               },
               ignore: false,
               useEslintrc: false,
@@ -170,7 +173,16 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [
+              paths.appSrc,
+              ...[
+                'bitcoinjs-lib',
+                'tiny-secp256k1/ecurve',
+                'base64url/dist/base64url',
+                'base64url/dist/pad-string',
+                'bip32'
+              ].map(moduleName => `${ paths.appNodeModules }/${ moduleName }`)
+            ],
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
@@ -178,6 +190,17 @@ module.exports = {
               presets: [require.resolve('babel-preset-react-app')],
               // @remove-on-eject-end
               compact: true,
+              plugins: [
+                'transform-remove-console',
+                'inline-react-svg',
+                'idx',
+                'transform-decorators-legacy',
+                'react-require',
+                ['module-resolver', {
+                  'root': paths.appSrc,
+                  'alias': { '~': '.' }
+                }],
+              ],
             },
           },
           // The notation here is somewhat confusing.

@@ -134,6 +134,9 @@ module.exports = {
               // @remove-on-eject-begin
               baseConfig: {
                 extends: [require.resolve('eslint-config-react-app')],
+                rules: {
+                  "react/react-in-jsx-scope": 0,
+                },
               },
               ignore: false,
               useEslintrc: false,
@@ -169,6 +172,15 @@ module.exports = {
               // @remove-on-eject-begin
               babelrc: false,
               presets: [require.resolve('babel-preset-react-app')],
+              plugins: [
+                'inline-react-svg',
+                'transform-decorators-legacy',
+                'react-require',
+                ['module-resolver', {
+                  'root': paths.appSrc,
+                  'alias': { '~': '.' }
+                }],
+              ],
               // @remove-on-eject-end
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
