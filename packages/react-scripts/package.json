@@ -1,14 +1,14 @@
 {
-  "name": "react-blockstack-scripts",
+  "name": "blockstack-react-scripts",
   "version": "1.0.0",
   "description": "Configuration and scripts for React-based Blockstack dapps",
-  "repository": "harrysolovay/create-blockstack-dapp",
+  "repository": "https://github.com/harrysolovay/blockstack-react-scripts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/harrysolovay/create-blockstack-dapp/issues"
+    "url": "https://github.com/harrysolovay/blockstack-react-scripts/issues"
   },
   "files": [
     "bin",
@@ -18,7 +18,7 @@
     "utils"
   ],
   "bin": {
-    "react-blockstack-scripts": "./bin/react-scripts.js"
+    "blockstack-react-scripts": "./bin/react-scripts.js"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",

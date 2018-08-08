@@ -1,4 +1,4 @@
-# react-blockstack-scripts [![npm version](https://img.shields.io/npm/v/react-app-rewire-blockstack.svg?style=flat)](https://www.npmjs.com/package/react-app-rewire-blockstack)
+# blockstack-react-scripts [![npm version](https://img.shields.io/npm/v/react-app-rewire-blockstack.svg?style=flat)](https://www.npmjs.com/package/react-app-rewire-blockstack)
 
 > initialize your [`create-react-app`](https://github.com/facebookincubator/create-react-app)-based project with support for [`blockstack.js`](https://github.com/blockstack/blockstack.js), along with some pre-configured goodies (like authentication boilerplate, scss modules, and decorator support).
 
@@ -21,11 +21,11 @@
 
 ## Initializing your dapp
 
-Initiaize your apps exactly as you would normally, but with the `--scripts-version` set to `react-blockstack-scripts`:
+Initiaize your apps exactly as you would normally, but with the `--scripts-version` set to `blockstack-react-scripts`:
 
 ```diff
 -   create-react-app my-app
-+   create-react-app my-dapp --scripts-version react-blockstack-scripts
++   create-react-app my-dapp --scripts-version blockstack-react-scripts
 ```
 
 ## Exploring the folder structure
