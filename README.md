@@ -1,4 +1,4 @@
-# blockstack-react-scripts [![npm version](https://img.shields.io/npm/v/react-app-rewire-blockstack.svg?style=flat)](https://www.npmjs.com/package/react-app-rewire-blockstack)
+# blockstack-react-scripts [![npm version](https://img.shields.io/npm/v/blockstack-react-scripts.svg?style=flat)](https://www.npmjs.com/package/blockstack-react-scripts)
 
 > initialize your [`create-react-app`](https://github.com/facebookincubator/create-react-app)-based project with support for [`blockstack.js`](https://github.com/blockstack/blockstack.js), along with some pre-configured goodies (like authentication boilerplate, scss modules, and decorator support).
 

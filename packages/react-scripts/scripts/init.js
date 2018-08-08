@@ -37,10 +37,10 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    start: 'react-blockstack-scripts start',
-    build: 'react-blockstack-scripts build',
-    test: 'react-blockstack-scripts test --env=jsdom',
-    eject: 'react-blockstack-scripts eject',
+    start: 'blockstack-react-scripts start',
+    build: 'blockstack-react-scripts build',
+    test: 'blockstack-react-scripts test --env=jsdom',
+    eject: 'blockstack-react-scripts eject',
   };
 
   fs.writeFileSync(
