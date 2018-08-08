@@ -4,24 +4,24 @@
 
 ## Features
 
-###CRA + Blockstack fixes:
+CRA + Blockstack fixes:
 
-* the dev server is configured to work with CORS so that you won't experience any [authentication errors](https://forum.blockstack.org/t/dealing-with-cors-errors-in-blockstack-auth-and-react/2592) in development
+* the dev server is configured to work with CORS (to & from) so that you won't experience any [authentication errors](https://forum.blockstack.org/t/dealing-with-cors-errors-in-blockstack-auth-and-react/2592) in development
 * the build script works properly (whitelists uncompiled Blockstack dependencies to prevent [minification failure](https://github.com/facebook/create-react-app/issues/3734))
 
-###Extras:
+Extras:
 
 * works, out of the box, with SASS/SCSS and CSS (modules of course!)
-* [tc39 stage-2 decorators](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy) ([proposal](https://github.com/tc39/proposal-decorators))
-* [never import "React"](https://github.com/vslinko/babel-plugin-react-require) (it will be loaded into JSX files without the explicit import)
+* [tc39 stage-2 decorators](https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy)
+* never import "React" (it will be loaded into JSX files without the explicit import)
 * [module resolving](https://github.com/tleunen/babel-plugin-module-resolver): '~' resolves to the root directory's 'src' folder
 * [SVG inlining](https://github.com/airbnb/babel-plugin-inline-react-svg)
-* [idx](https://github.com/facebookincubator/idx#readme) calls are compiled in build
-* [removes console logs, warns and errors](https://github.com/babel/minify/tree/master/packages/babel-plugin-transform-remove-console) in production
+* [idx](https://github.com/facebookincubator/idx#readme) calls are compiled in production
+* console logs, warns and errors are removed in production
 
 ## Initializing your dapp
 
-Initiaize your apps exactly as you would normally, but with the `--scripts-version` set to `blockstack-react-scripts`:
+Initiaize your CRA projects the way you usually do with the exception of one change: Use the `--scripts-version` argument as `blockstack-react-scripts`:
 
 ```diff
 -   create-react-app my-app
@@ -51,7 +51,7 @@ my-app
 
 ## This template is relatively unopinionated
 
-The features I've included in this config are pretty standard for any react project. [Dan Abromov](https://github.com/gaearon), the creator and primary maintainer of CRA, wanted CTA to be a collection of "sensible defaults." He and the community most certainly achieved this, but they did so at the price of simple plugin usage. I added in a few of those must-have plugins, and left the CRA model of "ejection" (so feel free to eject if you need more functionality). There's another option available to you if you want to use CRA to bootstrap your project, but want additional configuration: try out [react-app-rewire-blockstack](https://github.com/harrysolovay/react-app-rewire-blockstack). It's easy to get goin', and paves the way for simpler configuration down the line (without ejecting). Beyond the config being relatively unopinionated, the template generated should be good for most use cases. It shows how to impliment Blockstack's authentication, and includes some helpful resources for exploring the Blockstack ecosystem (real-life Pied Piper!). So yea... I hope this suits your needs. You're gonna kill it 👍
+The features I've included in this config are pretty standard for any react project. [Dan Abromov](https://github.com/gaearon), the creator and primary maintainer of CRA, wanted CRA to be a collection of "sensible defaults." He and the community most certainly achieved this, but they did so at the price of simple plugin usage. I added in a few of those must-have plugins, and left the CRA "ejection" process (so feel free to eject if you need more functionality). There's another option available to you if you want to use CRA to bootstrap your project, but want additional configuration: try out [react-app-rewire-blockstack](https://github.com/harrysolovay/react-app-rewire-blockstack). It's easy to get goin', and paves the way for simpler configuration down the line (without ejecting). Beyond the config being relatively unopinionated, the template generated should be good for most use cases. It shows how to impliment Blockstack's authentication, and includes some helpful resources for exploring the Blockstack ecosystem (real-life Pied Piper). So yea... I hope this suits your needs. You're gonna kill it 👍
 
 ## Contributing
 
