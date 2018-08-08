@@ -10,7 +10,7 @@ export default () => (
       />
       |
       <ExternalLink
-        href='https://github.com/harrysolovay/create-blockstack-dapp/tree/next/packages/react-scripts'
+        href='https://github.com/harrysolovay/blockstack-react-scripts'
         children='blockstack-react-scripts'
       />
     </div>
