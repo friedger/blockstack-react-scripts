@@ -144,6 +144,7 @@ module.exports = {
                 extends: [require.resolve('eslint-config-react-app')],
                 rules: {
                   "react/react-in-jsx-scope": 0,
+                  "jsx-a11y/anchor-has-content": 0,
                 },
               },
               ignore: false,
@@ -197,8 +198,8 @@ module.exports = {
                 'transform-decorators-legacy',
                 'react-require',
                 ['module-resolver', {
-                  'root': paths.appSrc,
-                  'alias': { '~': '.' }
+                  'root': paths.rootDir,
+                  'alias': { '~': './src' }
                 }],
               ],
             },
@@ -216,7 +217,7 @@ module.exports = {
           // use the "style" loader inside the async code so CSS from them won't be
           // in the main CSS file.
           {
-            test: /\.css$/,
+            test: /\.(css|sass|scss)$/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -233,7 +234,12 @@ module.exports = {
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[name]_[local]_[hash:base64:5]',
                       },
+                    },
+                    {
+                      loader: require.resolve('sass-loader'),
                     },
                     {
                       loader: require.resolve('postcss-loader'),

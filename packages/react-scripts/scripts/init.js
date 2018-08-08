@@ -37,10 +37,10 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    start: 'react-scripts start',
-    build: 'react-scripts build',
-    test: 'react-scripts test --env=jsdom',
-    eject: 'react-scripts eject',
+    start: 'react-blockstack-scripts start',
+    build: 'react-blockstack-scripts build',
+    test: 'react-blockstack-scripts test --env=jsdom',
+    eject: 'react-blockstack-scripts eject',
   };
 
   fs.writeFileSync(
@@ -99,7 +99,7 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
-  args.push('react', 'react-dom');
+  args.push('react', 'react-dom', 'blockstack');
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(
@@ -120,7 +120,7 @@ module.exports = function(
   // which doesn't install react and react-dom along with react-scripts
   // or template is presetend (via --internal-testing-template)
   if (!isReactInstalled(appPackage) || template) {
-    console.log(`Installing react and react-dom using ${command}...`);
+    console.log(`Installing react, react-dom and blockstack using ${command}...`);
     console.log();
 
     const proc = spawn.sync(command, args, { stdio: 'inherit' });
@@ -189,6 +189,7 @@ function isReactInstalled(appPackage) {
 
   return (
     typeof dependencies.react !== 'undefined' &&
-    typeof dependencies['react-dom'] !== 'undefined'
+    typeof dependencies['react-dom'] !== 'undefined' &&
+    typeof dependencies.blockstack !== 'undefined'
   );
 }

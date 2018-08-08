@@ -1,0 +1,54 @@
+@import '../../_variables.scss';
+
+.container {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 60px;
+  box-shadow: 0px 0px 1px $NAV_BOX_SHADOW;
+  z-index: 1000;
+  background-color: #fff;
+
+  > div {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a, button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-size: 1em;
+    font-weight: 400;
+    color: #3a3a3a;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+  }
+}
+
+.active {
+  color: $BLOCKSTACK_APP_BLUE !important;
+  border-bottom: 1px solid $BLOCKSTACK_APP_BLUE;
+  padding-top: 1px;
+}
+
+.blockstackLink {
+  width: 60px;
+  padding: 0px !important;
+
+  > svg {
+    margin-top: 1px;
+    margin-right: 1px;
+    width: 16px;
+    height: 16px;
+  }
+}

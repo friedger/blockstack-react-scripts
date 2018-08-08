@@ -1,0 +1,63 @@
+@import './_variables';
+
+// basic reset
+:global(html), :global(body), :global(div), :global(header), :global(nav), :global(menu), :global(main), :global(section), :global(hr), :global(footer),
+:global(img), :global(svg), :global(audio), :global(video), :global(canvas), :global(object), :global(iframe),
+:global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6), :global(a), :global(p), :global(span), :global(ol), :global(ul), :global(li),
+:global(blockquote), :global(code), :global(del), :global(ins), :global(sub), :global(sup),
+:global(table), :global(caption), :global(tbody), :global(tfoot), :global(thead), :global(tr), :global(th), :global(td),
+:global(form), :global(label), :global(input), :global(textarea), :global(datalist), :global(option), :global(select), :global(button) {
+
+  position: relative;
+  top : 0px; right: 0px; bottom: 0px; left: 0px;
+
+  box-sizing: border-box;
+  width: inherit;
+  height: inherit;
+  padding: 0px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: inherit;
+  margin: 0px;
+  background-color: transparent;
+
+  text-align: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  vertical-align: baseline;
+  text-decoration: inherit;
+  color: inherit;
+  white-space: normal;
+  max-width: 100%;
+  // make styles more consistent on iOS
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: inherit;
+  // faster paints
+  backface-visibility: hidden;
+}
+
+:global(:focus) {
+  border-style: none;
+  outline : none;
+}
+
+:global(::selection) {
+  background-color: $BLOCKSTACK_BLUE;
+}
+
+:global(body) {
+  font-family: $DEFAULT_FONT_FAMILIES;
+  font-size: $BASE_FONT_SIZE;
+  font-weight: $DEFAULT_FONT_WEIGHT;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: $DEFAULT_TEXT_COLOR;
+  border-color: $DEFAULT_BORDER_COLOR;
+}
+
+:global(a), :global(button) {
+  cursor: pointer;
+}

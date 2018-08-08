@@ -136,6 +136,7 @@ module.exports = {
                 extends: [require.resolve('eslint-config-react-app')],
                 rules: {
                   "react/react-in-jsx-scope": 0,
+                  "jsx-a11y/anchor-has-content": 0,
                 },
               },
               ignore: false,
@@ -177,8 +178,8 @@ module.exports = {
                 'transform-decorators-legacy',
                 'react-require',
                 ['module-resolver', {
-                  'root': paths.appSrc,
-                  'alias': { '~': '.' }
+                  'root': paths.rootDir,
+                  'alias': { '~': './src' }
                 }],
               ],
               // @remove-on-eject-end
@@ -194,14 +195,19 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.(css|sass|scss)$/,
             use: [
               require.resolve('style-loader'),
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
                 },
+              },
+              {
+                loader: require.resolve('sass-loader'),
               },
               {
                 loader: require.resolve('postcss-loader'),

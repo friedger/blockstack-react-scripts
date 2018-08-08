@@ -1,0 +1,29 @@
+@import '../../_variables.scss';
+
+.container {
+  border-top: 1px solid $DEFAULT_BORDER_COLOR;
+  padding : 57px 0px 56px 0px;
+  text-align: center;
+  font-size: 1.125em;
+  line-height: 1.125em;
+
+}
+
+.links {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  
+  a {
+    display: block;
+    padding: 0px 5px;
+    text-decoration: underline;
+  }
+}
+
+.copyright {
+  display: block;
+  margin-top: 15px;
+  opacity: .25;
+}

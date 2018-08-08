@@ -1,0 +1,57 @@
+@import '../../_variables.scss';
+
+.container {
+  max-width: $SECTION_MAX_WIDTH;
+  margin: 0px auto;
+
+  > div {
+    width: 100%;
+    padding: 2.5%;
+
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+    @media screen and (min-width: $TABLET_MIN_WIDTH) {
+      padding: 1.25%;
+    }
+  }
+}
+
+.resource {
+  display: block;
+  float: left;
+  width: 95%;
+  margin: 2.5%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: $RESOURCE_BOX_SHADOW;
+
+  @media screen and (min-width: $TABLET_MIN_WIDTH) and (max-width: $TABLET_MAX_WIDTH) {
+    width: 47.5%;
+    margin: 1.25%;
+  }
+
+  @media screen and (min-width: $DESKTOP_MIN_WIDTH) {
+    width: 30.8333%;
+    margin: 1.25%;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  padding-bottom: 61.81%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all .25s linear;
+  /* performance */
+  perspective: 1000;
+  transform: translateZ(0);
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}

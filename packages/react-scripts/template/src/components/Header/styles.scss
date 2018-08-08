@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #241132;
+  text-align: center;
+  color: #fff;
+}
+
+.visual {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin: 15px;
+  }
+}
+
+.heading {
+  margin-top: 20px;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.subheading {
+  margin-top: 10px;
+  font-size: 22px;
+  line-height: 30.25px;
+}
