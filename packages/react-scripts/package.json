@@ -1,6 +1,6 @@
 {
   "name": "react-blockstack-scripts",
-  "version": "1.2.7",
+  "version": "1.0.0",
   "description": "Configuration and scripts for React-based Blockstack dapps",
   "repository": "harrysolovay/create-blockstack-dapp",
   "license": "MIT",
