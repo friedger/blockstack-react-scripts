@@ -179,6 +179,7 @@ module.exports = {
               ...[
                 'bitcoinjs-lib',
                 'tiny-secp256k1/ecurve',
+                'tiny-secp256k1/rfc6979',
                 'base64url/dist/base64url',
                 'base64url/dist/pad-string',
                 'bip32'
